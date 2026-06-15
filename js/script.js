@@ -1,4 +1,4 @@
-// Data declared outside functions so it persists across clicks
+// Data declared outside functions so it persists across button clicks
 const choices = ["Bear", "Ninja", "Hunter"];
 let playerWins = 0;
 let computerWins = 0;
@@ -31,14 +31,14 @@ function playGame(playerChoice)
     computerWins++;
   }
 
-  // Update results box content
+  // Update results box — wording matches spec mockup exactly
   document.getElementById("player-choice-display").innerHTML   = "You chose " + playerChoice + ".";
-  document.getElementById("computer-choice-display").innerHTML = "The computer chose " + computerChoice + ".";
+  document.getElementById("computer-choice-display").innerHTML = "The computer chose " + computerChoice;
   document.getElementById("outcome-display").innerHTML         = outcome;
 
-  // Update win counter content
-  document.getElementById("wins-display").innerHTML =
-    "Your Wins: " + playerWins + "<br>Computer Wins: " + computerWins;
+  // Update win counter — matches spec mockup exactly
+  document.getElementById("player-wins-display").innerHTML   = "Your Wins: " + playerWins;
+  document.getElementById("computer-wins-display").innerHTML = "Computer Wins: " + computerWins;
 
   // Show results box, win counter, and play again button
   document.getElementById("results-box").style.display          = "block";
@@ -50,7 +50,7 @@ function playGame(playerChoice)
 
 function playAgain()
 {
-  // Hide results — win counters stay in memory
+  // Hide results — win counters stay in memory and will show again next round
   document.getElementById("results-box").style.display          = "none";
   document.getElementById("win-counter").style.display          = "none";
   document.getElementById("play-again-btn").style.display       = "none";
